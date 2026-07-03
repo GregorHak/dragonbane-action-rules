@@ -1,44 +1,10 @@
 # Changelog
 
-## [3.0.0] - 2026-06-21
-
-### 🚀 Major Compatibility Update — Foundry v14 & Dragonbane v4.0.1
-
-This release is a clean cut to **Foundry VTT v14** and **Dragonbane system v4.0.1**. It drops support for Foundry v12/v13 and Dragonbane v2.x/v3.x.
-
-- **⚠️ Breaking Change** — Now requires **Foundry v14** (verified 14.364) and **Dragonbane v4.0.0+** (verified 4.0.1)
-- **Staying on Foundry v13?** Continue using Combat Assistant **v2.2.5**. There is no Dragonbane release that supports both v13 and v14, so this is a hard version cut rather than a dual-compatibility update.
-
-### 🪄 Reworked Spell Animation Support
-
-The Automated Animations integration has been rebuilt from the ground up.
-
-- **No more spell-data modification** — Previous versions made non-damaging spells animate by writing a placeholder value into their damage field. This release instead triggers Automated Animations directly through its own API, so your spell data is never altered.
-- **Removed the manual Enable/Disable AA buttons** — Animations now work automatically whenever Automated Animations is installed. There is nothing to toggle.
-- **Automatic one-time cleanup** — On first launch, any leftover placeholder data from previous versions is cleared automatically. A one-time notification confirms how many spells were tidied.
-- **⚠️ Animation configuration note** — For a spell to animate when **cast**, its Automated Animations entry must be in a cast-type category (**On Token, Range, Melee, Templates, Aura, or Preset**). Entries in the **Active Effects** category animate when the effect is _applied_ to a token (handled by Automated Animations directly), not on cast. If a spell stops animating after this update, check that its AA entry uses a cast-type category. See the README's "Spell Animations" section for details.
-
-### 🏷️ Custom Weapon Feature Tooltips
-
-- **Optional tooltips for custom weapon features** — When adding a custom weapon feature, you can now give it a tooltip that appears when hovering over the feature on a weapon. Add the tooltip after a `|` in the feature list — for example, `Wounding|Inflicts an extra wound on a critical hit`. Features without a tooltip simply show no hover text. Existing comma-separated lists continue to work unchanged.
+## [3.0.1] - 2026-07-03
 
 ### 🐛 Bug Fixes
 
-- **Custom feature tooltips** — Custom weapon features no longer show a stray internal label on hover when no tooltip is set; they now correctly show nothing.
-- **Shove reminders** — Fixed shove reminders not appearing. The reminder logic read a chat-message property that changed in Dragonbane v4.0.1, causing it to silently skip.
-- **Spell status effects** — Fixed an error that could prevent automatic status effects from applying when the caster's own client processed the spell, due to the same v4.0.1 message-property change.
-
-### 🔧 Technical Improvements
-
-- **Dialogs converted to ApplicationV2** — All confirmation dialogs (Mark Weapon Broken, Monster Action Prevention, Grudge Folder Setup) now use Foundry's modern DialogV2 framework, removing deprecation warnings ahead of Foundry v15.
-- **Chat and journal hooks modernized** — Migrated to v14's native HTML hooks, replacing the deprecated jQuery-based chat message handling.
-- **Character sheet attack interception rebuilt** — Reworked to align with Dragonbane v4.0.1's ApplicationV2 action system, restoring weapon and ranked-spell validation from the character sheet.
-- **Removed legacy v12/v13 compatibility code** — Cleaned out dead code paths and scaffolding now that the module targets a single Foundry version.
-
-### 🌍 Localization
-
-- Added the spell-cleanup notification string in English, Swedish, and Italian
-- Updated the Excluded Spells setting description to reflect that exclusions apply to validation only
+- **YZE single-action icons not showing on tokens** — Fixed action status effects (action1–action9) not painting their icon on the token when the Year Zero Engine action tracker applied them. The effect was applied correctly — it showed on the character sheet's Effects tab and marked the action in the combat turn tracker — but the token overlay icon didn't draw. This is the same v4.0.1/v14 token-overlay behavior that was addressed for encumbrance in 3.0.0; the shared status-effect helper now applies effects through Foundry's native toggle so the icon draws reliably.
 
 ---
 

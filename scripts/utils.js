@@ -94,7 +94,7 @@ export class DragonbaneUtils {
     } catch (error) {
       if (typeof DoD_Utility !== "undefined" && DoD_Utility.WARNING) {
         DoD_Utility.WARNING(
-          `Failed to get setting ${settingName}: ${error.message}`
+          `Failed to get setting ${settingName}: ${error.message}`,
         );
       }
       return fallback;
@@ -136,7 +136,7 @@ export class DragonbaneUtils {
     return this.hasWeaponFeature(
       weapon,
       "DoD.weaponFeatureTypes.toppling",
-      "toppling"
+      "toppling",
     );
   }
 
@@ -154,20 +154,20 @@ export class DragonbaneUtils {
     return this.hasWeaponFeature(
       weapon,
       "DoD.weaponFeatureTypes.thrown",
-      "thrown"
+      "thrown",
     );
   }
 
   /**
    * Detect dragon roll in message
    */
-static detectDragonRoll(message) {
-  if (!message || !message.content) return false;
+  static detectDragonRoll(message) {
+    if (!message || !message.content) return false;
 
-  const dragonTerm = game.i18n.localize("DoD.roll.dragon") || "dragon";
-  
-  return message.content.toLowerCase().includes(dragonTerm.toLowerCase());
-}
+    const dragonTerm = game.i18n.localize("DoD.roll.dragon") || "dragon";
+
+    return message.content.toLowerCase().includes(dragonTerm.toLowerCase());
+  }
 
   /**
    * Check if combat is currently active and started
@@ -196,7 +196,7 @@ static detectDragonRoll(message) {
         (effect) =>
           effect.id === statusEffectId ||
           effect.name === effectName ||
-          effect.id === effectName
+          effect.id === effectName,
       ) || null
     );
   }
@@ -227,14 +227,7 @@ static detectDragonRoll(message) {
       const hasEffect = this.hasStatusEffect(actor, effectName);
 
       if (active && !hasEffect) {
-        const effectData = {
-          name: game.i18n.localize(effect.label || effect.name || effectName),
-          img: effect.img || effect.icon || "icons/svg/aura.svg",
-          statuses: [effect.id],
-          origin: actor.uuid,
-        };
-
-        await actor.createEmbeddedDocuments("ActiveEffect", [effectData]);
+        await actor.toggleStatusEffect(effect.id, { active: true });
         return true;
       } else if (!active && hasEffect) {
         // Remove the effect using native API
@@ -242,7 +235,7 @@ static detectDragonRoll(message) {
           (e) =>
             e.statuses?.has(effect.id) ||
             e.name === effectName ||
-            e.name === effect.name
+            e.name === effect.name,
         );
 
         if (activeEffect) {
@@ -255,7 +248,7 @@ static detectDragonRoll(message) {
     } catch (error) {
       if (typeof DoD_Utility !== "undefined" && DoD_Utility.WARNING) {
         DoD_Utility.WARNING(
-          `Error toggling status effect ${effectName}: ${error.message}`
+          `Error toggling status effect ${effectName}: ${error.message}`,
         );
       }
       return false;
@@ -293,7 +286,7 @@ static detectDragonRoll(message) {
     } catch (error) {
       if (typeof DoD_Utility !== "undefined" && DoD_Utility.WARNING) {
         DoD_Utility.WARNING(
-          `Error ensuring status effect exists ${effectName}: ${error.message}`
+          `Error ensuring status effect exists ${effectName}: ${error.message}`,
         );
       }
       return false;

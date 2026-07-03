@@ -23,7 +23,7 @@ import { DragonbaneYZEIntegration } from "./yze-integration.js";
 
 class DragonbaneActionRules {
   static ID = "dragonbane-action-rules";
-  static VERSION = "3.0.0";
+  static VERSION = "3.0.1";
 
   static FLAGS = {
     RULES_MESSAGE: "dragonbaneRulesMessage",
