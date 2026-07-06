@@ -158,7 +158,7 @@
     },
     "parry": {
       "reaction": "Parowanie zastępuje twoją normalną turę (reakcja)",
-      "success": "Sukces = nie otrzymujesz obrażeń. Ale jeśli: obrażenia > trwałość, oręż uszkodzony aż do naprawy",
+      "success": "Sukces = nie otrzymujesz obrażeń. Ale jeśli: obrażenia > trwałość oręża, to uszkodzony aż do naprawy",
       "piercing": "Kłute obrażenia nie mogą uszkodzić oręża",
       "monster": "Ataków potworów nie można parować, chyba że opis jakiegoś stanowi inaczej",
       "movement": "Sukces = możesz przesunąć siebie i wroga o 2 metry (bez ataków darmowych)",
