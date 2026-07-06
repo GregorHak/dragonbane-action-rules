@@ -157,14 +157,14 @@
       "spellOutOfRange": "{spell} is out of range! Max: {maxRange}m, Distance: {distance}m"
     },
     "parry": {
-      "reaction": "Parrying uses your action for the turn (reaction)",
-      "success": "Success = no damage. If damage > durability, weapon damaged until repaired",
-      "piercing": "Piercing attacks cannot damage parrying weapons/shields",
-      "monster": "Monster attacks cannot be parried (unless specified)",
-      "movement": "Success = move yourself and enemy 2m (doesn't count as movement, no free attacks)",
-      "dragon": "Dragon = counterattack (cannot be dodged/parried). If attacker rolled Dragon, need Dragon to parry (no counterattack)",
-      "dodgeMovement": "<strong>If Dodging:</strong> You may move up to 2m in any direction (no free attacks triggered)",
-      "ifParrying": "If Parrying:"
+      "reaction": "Parowanie zastępuje twoją normalną turę (reakcja)",
+      "success": "Sukces = nie otrzymujesz obrażeń. Ale jeśli: obrażenia > trwałość, oręż uszkodzony aż do naprawy",
+      "piercing": "Kłute obrażenia nie mogą uszkodzić oręża",
+      "monster": "Ataków potworów nie można parować, chyba że opis jakiegoś stanowi inaczej",
+      "movement": "Sukces = możesz przesunąć siebie i wroga o 2 metry (bez ataków darmowych)",
+      "dragon": "Smok = kontratak (nie można unikać lub parować). Jeśli wróg wyturlał smoka w teście ataku, to twój smok jest niezbędny, by parować (bez kontrataku)",
+      "dodgeMovement": "<strong>Jeśli unikasz:</strong> możesz przemieścić się o 2 metry (bez ataków darmowych)",
+      "ifParrying": "Jeśli parujesz:"
     },
     "topple": {
       "noDamage": "No damage dealt",
@@ -193,7 +193,7 @@
       "defaultTarget": "target"
     },
     "evade": {
-      "movementAvailable": "<strong>If Dodging:</strong> You may move up to 2m in any direction (no free attacks triggered)"
+      "movementAvailable": "<strong>Jeśli unikasz:</strong> możesz przemieścić się o 2 metry (bez ataków darmowych)"
     },
     "weaponBroken": {
       "buttonText": "Mark Weapon Broken",
