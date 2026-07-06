@@ -214,13 +214,13 @@
     },
     "encumbrance": {
       "statusEffectName": "Over-Encumbered",
-      "nowOverEncumbered": "{actorName} is now over-encumbered ({currentEnc}/{maxEnc} items)",
-      "noLongerOverEncumbered": "{actorName} is no longer over-encumbered ({currentEnc}/{maxEnc} items)",
-      "chatOverEncumbered": "<strong>{actorName}</strong> is now <strong>over-encumbered!</strong>",
-      "chatNoLongerOverEncumbered": "<strong>{actorName}</strong> is no longer over-encumbered.",
-      "carryingItems": "Carrying {currentEnc}/{maxEnc} items",
-      "strRollReminder": "Must make STR rolls to move in combat or during travel shifts while over-encumbered.",
-      "systemMessage": "Encumbrance Monitor"
+      "nowOverEncumbered": "{actorName} jest od teraz przeciążony/a, dźwiga: ({currentEnc}/{maxEnc})",
+      "noLongerOverEncumbered": "{actorName} nie jest już przeciążony/a, dźwiga: ({currentEnc}/{maxEnc})",
+      "chatOverEncumbered": "<strong>{actorName}</strong> dźwiga zbyt dużo i jest od teraz <strong>przeciążony/a!</strong>",
+      "chatNoLongerOverEncumbered": "<strong>{actorName}</strong> nie jest już przeciążony/a.",
+      "carryingItems": "Obecny udźwig: {currentEnc}/{maxEnc}",
+      "strRollReminder": "Musisz przetestować SIŁ, ilekroć chcesz wykonać ruch w czasie walki albo maszerować przez jedną kwartę podróży.",
+      "systemMessage": "Kontrola przeciążenia"
     },
     "overrides": {
       "targetEnforcementDisabled": "Target selection enforcement disabled",
